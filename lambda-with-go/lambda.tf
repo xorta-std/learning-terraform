@@ -18,7 +18,7 @@ data "archive_file" "function_archive" {
 
 // create the lambda function from zip file
 resource "aws_lambda_function" "function" {
-  function_name = "myapp"
+  function_name = local.binary_name
   description   = "My first hello world function"
   role          = aws_iam_role.lambda.arn
   handler       = local.binary_name
